@@ -6,7 +6,7 @@ import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
+// Початок
 public class MainActivity extends AppCompatActivity {
 
     private EditText editTextName, editTextAddress, editTextEmployeeCount;

@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.store.R;
 import com.example.store.activity2.SecondActivity;
 import com.example.store.databinding.ActivityMainBinding;
-import com.example.store.model.Shop;
+import com.example.store.data.room.ShopEntity;
 
 public class MainActivity extends AppCompatActivity {
 

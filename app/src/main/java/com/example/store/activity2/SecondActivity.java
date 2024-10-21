@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.store.databinding.ActivitySecondBinding;
-import com.example.store.model.Shop;
+import com.example.store.data.room.ShopEntity;
 
 public class SecondActivity extends AppCompatActivity {
 

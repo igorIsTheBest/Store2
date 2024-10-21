@@ -5,6 +5,7 @@ plugins {
 android {
     namespace = "com.example.store"
     compileSdk = 34
+    
 
     defaultConfig {
         applicationId = "com.example.store"
@@ -45,4 +46,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation("androidx.room:room-runtime:2.5.0")
+
+    implementation("androidx.room:room-ktx:2.5.0") // Для зручної роботи з корутинами
+
+    // Test dependencies
+    testImplementation("androidx.room:room-testing:2.5.0")
 }

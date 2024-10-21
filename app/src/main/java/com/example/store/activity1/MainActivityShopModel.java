@@ -1,6 +1,6 @@
 package com.example.store.activity1;
 
-import com.example.store.model.Shop;
+import com.example.store.data.room.ShopEntity;
 
 public class MainActivityShopModel {
     private String name;

@@ -14,29 +14,25 @@ public class ShopEntity {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "Id")
     private int id;
-
-    @ColumnInfo(name = "Name")
+    @ColumnInfo(name = "name")
     private String name;
-
-    @ColumnInfo(name = "Address")
+    @ColumnInfo(name = "address")
     private String address;
+    @ColumnInfo(name = "employees")
+    private int employees;
+    @ColumnInfo(name = "Note")
+    private String note;
 
-    @ColumnInfo(name = "EmployeeCount")
-    private int employeeCount;
-
-    // Порожній конструктор для Room
     public ShopEntity() {
     }
 
-    // Конструктор для створення нових об'єктів без ідентифікатора
     @Ignore
-    public ShopEntity(String name, String address, int employeeCount) {
+    public ShopEntity(String name, String address, int employees, String note) {
         this.name = name;
         this.address = address;
-        this.employeeCount = employeeCount;
+        this.employees = employees;
+        this.note = note;
     }
-
-    // Гетери і сетери
     public int getId() {
         return id;
     }
@@ -61,11 +57,20 @@ public class ShopEntity {
         this.address = address;
     }
 
-    public int getEmployeeCount() {
-        return employeeCount;
+    public int getEmployees() {
+        return employees;
     }
 
-    public void setEmployeeCount(int employeeCount) {
-        this.employeeCount = employeeCount;
+    public void setEmployees(int employees) {
+        this.employees = employees;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }
+

@@ -15,11 +15,11 @@
 
         <!-- Исправлено имя активности -->
         <activity
-            android:name=".activity2.SecondActivity"
+            android:name=".new_shop.SecondActivity"
             android:exported="false" />
 
         <activity
-            android:name=".activity1.MainActivity"
+            android:name=".main_activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

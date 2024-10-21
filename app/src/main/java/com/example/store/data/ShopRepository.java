@@ -1,6 +1,7 @@
 package com.example.store.data;
 
-import com.example.store.data.concurrency.TaskCallback;
+import com.example.store.data.concurency.TaskCallback;
+
 import java.util.List;
 
 public interface ShopRepository {

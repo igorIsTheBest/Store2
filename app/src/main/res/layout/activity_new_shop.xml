@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.store.new_shop.NewShopViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:gravity="center"
+    tools:context=".new_shop.NewShopActivity">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name"
+        android:text="@={viewModel.newShopModelMutableLiveData.name}"/>
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/address"
+        android:text="@={viewModel.newShopModelMutableLiveData.address}"/>
+    <EditText
+        android:id="@+id/employees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/employees"
+        android:inputType="number"
+        android:text="@={viewModel.newShopModelMutableLiveData.employees}"/>
+    <EditText
+        android:id="@+id/notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/notes"
+        android:text="@={viewModel.newShopModelMutableLiveData.notes}"/>
+
+    <Button
+        android:id="@+id/addNewBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_new"
+        android:layout_marginVertical="12dp"
+        android:onClick="@{viewModel::onSaveClicked}"
+        />
+
+</LinearLayout>
+</layout>

@@ -1,15 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
+
 }
 
 android {
-    namespace = "com.example.store"
+    namespace = "com.example.kulshop"
     compileSdk = 34
-    
 
     defaultConfig {
-        applicationId = "com.example.store"
-        minSdk = 24
+        applicationId = "com.example.kulshop"
+        minSdk = 25
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -30,10 +30,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-
-    buildFeatures{
-        dataBinding=true
-        viewBinding=true
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -41,15 +39,18 @@ dependencies {
 
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+
+    // Room dependencies
+
+
+    implementation("androidx.room:room-runtime:2.5.2")
+    annotationProcessor("androidx.room:room-compiler:2.5.2")
+    implementation("androidx.room:room-ktx:2.5.2")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation("androidx.room:room-runtime:2.5.0")
-
-    implementation("androidx.room:room-ktx:2.5.0") // Для зручної роботи з корутинами
-
-    // Test dependencies
-    testImplementation("androidx.room:room-testing:2.5.0")
 }

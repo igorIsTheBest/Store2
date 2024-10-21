@@ -6,15 +6,15 @@ import com.example.store.data.room.ShopEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShopEntitiesListToShopListMapper implements Mapper<List<ShopEntity>, List<Shop>> {
+public class ShopEntitiesListToShopList implements Mapper<List<ShopEntity>, List<Shop>> {
 
     @Override
-    public List<Shop> map(List<ShopEntity> entities) {
-        ShopEntityToShopMapper mapper = new ShopEntityToShopMapper();
-        List<Shop> shops = new ArrayList<>();
-        for (ShopEntity entity : entities) {
-            shops.add(mapper.map(entity));
+    public List<Shop> map(List<ShopEntity> value) {
+        ShopEntityToShopMapper mapper=new ShopEntityToShopMapper();
+        List<Shop> result=new ArrayList<>();
+        for(ShopEntity shop:value){
+            result.add(mapper.map(shop));
         }
-        return shops;
+        return result;
     }
 }

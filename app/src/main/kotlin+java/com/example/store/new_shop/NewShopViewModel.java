@@ -5,22 +5,20 @@ import android.view.View;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.store.data.Shop;
 import com.example.store.data.ShopRepository;
 import com.example.store.data.mappers.Mapper;
 
 public class NewShopViewModel extends ViewModel {
 
-    private final MutableLiveData<NewShopModel> newBookModelMutableLiveData;
+    private final MutableLiveData<NewShopModel> newShopModelMutableLiveData;
     private final MutableLiveData<State> state;
-    private ShopRepository shopRepository;
+    private final ShopRepository shopRepository;
 
-    public NewShopViewModel() {
+    public NewShopViewModel(ShopRepository shopRepository) {
+        this.shopRepository = shopRepository;
         newShopModelMutableLiveData = new MutableLiveData<>(new NewShopModel());
         state = new MutableLiveData<>(new State());
-    }
-
-    public void setShopRepository(ShopRepository shopRepository) {
-        this.shopRepository = shopRepository;
     }
 
     public MutableLiveData<NewShopModel> getNewShopModelMutableLiveData() {
@@ -31,23 +29,24 @@ public class NewShopViewModel extends ViewModel {
         return state;
     }
 
-    public void onSaveClicked(View v){
+    public void onSaveClicked(View v) {
         shopRepository.addNewShop(mapper.map(newShopModelMutableLiveData.getValue()));
         finish();
     }
 
-    public void finish(){
-        State tmp=state.getValue();
+    public void finish() {
+        State tmp = state.getValue();
         if (tmp != null) {
-            tmp.needFinish=true;
+            tmp.needFinish = true;
             state.postValue(tmp);
         }
     }
-    private final Mapper<NewShopModel,Shop> mapper = value -> {
-        return new Shop(value.getName(),value.getAddress(),Integer.parseInt(value.getEmployees()),value.getNotes());
+
+    private final Mapper<NewShopModel, Shop> mapper = value -> {
+        return new Shop(value.getTitle(), value.getAuthor(), Integer.parseInt(value.getPages()), value.getNotes());
     };
 
-    public class State{
+    public class State {
         boolean needFinish;
     }
 }

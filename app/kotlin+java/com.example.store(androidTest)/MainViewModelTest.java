@@ -42,7 +42,7 @@ public class MainViewModelTest {
 
     @Test
     public void testViewModelGetLiveDataForRecyclerView() {
-        // Моделюємо поведінку репозиторію для повернення тестових даних
+
         List<StoreCardEntity> mockData = new ArrayList<>();
         mockData.add(new StoreCardEntity("Test Store", 30, "Test Address"));
 
@@ -51,10 +51,8 @@ public class MainViewModelTest {
             return null;
         }).when(mockRepository).getAllStoreCards(Mockito.any());
 
-        // Викликаємо метод завантаження даних у ViewModel
         viewModel.reinitializeStoreCardList();
 
-        // Перевіряємо, що LiveData містить значення
         viewModel.getAllStoreCards().observeForever(allCards -> {
             Assert.assertNotNull("LiveData should not be null", allCards);
             assertEquals("LiveData should contain one entry", 1, allCards.size());
@@ -63,7 +61,7 @@ public class MainViewModelTest {
 
     @Test
     public void testViewModelGetLiveDataForViewState() {
-        // Моделюємо успішне додавання картки
+
         Mockito.doAnswer(invocation -> {
             ((StoreCardRepository.TaskCallback<Boolean>) invocation.getArguments()[1]).onSuccess(true);
             return null;

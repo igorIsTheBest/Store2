@@ -37,24 +37,28 @@ android {
 }
 
 dependencies {
+    implementation("androidx.room:room-runtime:2.6.0")
+    annotationProcessor("androidx.room:room-compiler:2.6.0")
 
-    implementation 'io.insert-koin:koin-core:3.5.0'
-    implementation 'io.insert-koin:koin-android:3.5.0'
-    implementation 'org.jetbrains.kotlin:kotlin-reflect'
+    implementation("io.insert-koin:koin-core:3.5.0")
+    implementation("io.insert-koin:koin-android:3.5.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
 
-    implementation 'androidx.annotation:annotation:1.7.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
-    def room_version = "2.6.0"
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.activity)
+    implementation(libs.constraintlayout)
 
-    implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 
 
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation("org.mockito:mockito-core:5.7.0")
+    androidTestImplementation("org.mockito:mockito-android:5.7.0")
+    implementation("net.bytebuddy:byte-buddy:1.14.9")
+    androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
+
+    testImplementation ("junit:junit:4.13.2")
+
 }

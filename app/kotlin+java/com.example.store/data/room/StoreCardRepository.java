@@ -39,7 +39,7 @@ public class StoreCardRepository {
         });
     }
 
-    // Функція для асинхронного видалення всіх медичних карт з зворотним викликом
+
     public void deleteAllCards(TaskCallback<Boolean> callback) {
         executorService.execute(() -> {
             try {

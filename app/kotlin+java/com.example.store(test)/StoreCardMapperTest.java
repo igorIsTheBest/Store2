@@ -50,8 +50,6 @@ public class StoreCardMapperTest {
 
         // Виконуємо мапінг до StoreCardEntity
         StoreCardEntity result = storeCardMapper.mapToEntity(card);
-
-        // Перевіряємо, що мапінг виконано коректно
         Assert.assertNotNull("Result should not be null", result);
         assertEquals("Test Name", result.storeName);
         assertEquals(30, result.empl);

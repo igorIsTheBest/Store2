@@ -11,12 +11,11 @@ public interface StoreCardDAO {
 
     // Метод отримання всіх записів
     @Query("SELECT * FROM store_cards")
-    List<StoreCardEntity> getAll();  // Повертає всі медичні картки
+    List<StoreCardEntity> getAll();
 
-    // Метод для вставки нового запису
+
     @Insert
-    void insert(StoreCardEntity storeCard);  // Вставляє медичну картку
-
+    void insert(StoreCardEntity storeCard);  /
     // Метод для видалення всіх записів
     @Query("DELETE FROM store_cards")
     void deleteAll();  // Очищає таблицю
